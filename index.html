@@ -254,7 +254,7 @@ footer{background:#0e223a}footer>img{background:#10294a;width:120px;height:120px
 .lua-checkout-steps b{display:grid;place-items:center;width:18px;height:18px;border:1px solid currentColor;border-radius:50%;font-size:.65rem}
 .lua-form-group{margin-bottom:7px;padding:8px 10px;border:1px solid #d5e0eb;border-radius:11px;background:#f2f6fa;display:grid;gap:8px;min-width:0}
 .lua-form-group h3,.lua-choice legend{font:600 .82rem/1.35 var(--ui);color:#193e65;margin:0}
-.lua-field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.lua-field-grid.lua-street-grid,.lua-field-grid.lua-postcode-grid{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}
+.lua-field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.lua-postcode-grid strong{display:block;margin-top:4px;padding:9px 0;color:#193e65}.lua-field-grid.lua-street-grid,.lua-field-grid.lua-postcode-grid{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}
 .lua-choice{border:0;margin:0;padding:0;min-width:0}
 .lua-choice legend{padding:0;margin-bottom:7px}
 .lua-choice-grid{display:grid;grid-auto-columns:minmax(0,1fr);grid-auto-flow:column;gap:8px}
@@ -524,13 +524,9 @@ function addressFields() {
       ${input('Rua / Avenida *','street','required maxlength="200" autocomplete="address-line1"')}
       ${input('Número *','number','required maxlength="30" placeholder="123 ou S/N"')}
     </div>
-    <div class="lua-field-grid">
-      ${input('Bairro *','district','required maxlength="200" autocomplete="address-level3"')}
-      ${input('Cidade *','city','required maxlength="200" autocomplete="address-level2"')}
-    </div>
     <div class="lua-field-grid lua-postcode-grid">
       ${input('CEP *','cep','required autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}-?[0-9]{3}" placeholder="00000-000"')}
-      ${input('Estado (UF) *','uf','required minlength="2" maxlength="2" pattern="[A-Za-z]{2}" autocomplete="address-level1" placeholder="UF"')}
+      <p class="ad-field"><span>Cidade / UF</span><strong>${e(customer.city)}–${e(customer.uf)}</strong></p>
     </div>
   </section>`;
 }
@@ -543,19 +539,15 @@ function dataFields() {
     </div></section>
     ${delivery ? addressFields() : '<p class="lua-checkout-note">Combine o local e o horário de retirada pelo WhatsApp.</p>'}
     <section class="lua-form-group">${choices('Como pretende pagar?','payment',[['Pix','Pix'],['Cartão','Cartão'],['Dinheiro','Dinheiro']])}<p class="lua-checkout-note">O pagamento será confirmado pela equipe.</p></section>
-    <details class="lua-form-group lua-item-options" ${customer.complement||customer.reference||customer.note||checkout.items.some(i=>options.get(i.id))?'open':''}>
+    <details class="lua-form-group lua-item-options" ${customer.note||checkout.items.some(i=>options.get(i.id))?'open':''}>
       <summary>Informações opcionais</summary>
-      ${delivery?`<div class="lua-field-grid">
-        ${input('Complemento','complement','maxlength="200" autocomplete="address-line2"')}
-        ${input('Ponto de referência','reference','maxlength="200"')}
-      </div>`:''}
       ${checkout.items.map(i=>`<label class="ad-field"><span>Aro ou tamanho · ${e(i.name)}</span><input name="option-${e(i.id)}" value="${e(options.get(i.id)||'')}" maxlength="120" placeholder="Ex.: aro 16"></label>`).join('')}
       <label class="ad-field"><span>Mensagem do cartão</span><textarea name="note" rows="2" placeholder="Escreva sua mensagem para o cartão…">${e(customer.note || '')}</textarea></label>
     </details>`;
 }
 function addressText() {
   const c=customer;
-  return `${c.street}, ${c.number}${c.complement?' · '+c.complement:''}\n${c.district} · ${c.city}/${c.uf.toUpperCase()} · CEP ${c.cep}${c.reference?'\nReferência: '+c.reference:''}`;
+  return `${c.street}, ${c.number}\n${c.city}/${c.uf.toUpperCase()} · CEP ${c.cep}`;
 }
 function itemText(i) {
   const option=options.get(i.id);

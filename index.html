@@ -248,13 +248,13 @@ footer{background:#0e223a}footer>img{background:#10294a;width:120px;height:120px
 #checkout-dialog .ad-field{margin:0;font-size:.79rem}
 #checkout-dialog .ad-field :is(input,select,textarea){margin-top:4px;padding:8px 10px;border-color:#cbd7e4;color:#112a47;background:#fff;min-height:39px}
 #checkout-dialog .ad-field textarea{resize:vertical}
-.lua-checkout-steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:0 28px 15px;padding:0;font:600 .73rem var(--ui);color:#4c6178}
+.lua-checkout-steps{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:7px;margin:0 28px 10px;padding:0;font:600 .73rem var(--ui);color:#4c6178}
 .lua-checkout-steps li{display:flex;align-items:center;justify-content:center;gap:6px;padding:8px 4px;border-radius:8px;background:#ebf0f5}
 .lua-checkout-steps li[aria-current]{color:white;background:#17395d}
 .lua-checkout-steps b{display:grid;place-items:center;width:18px;height:18px;border:1px solid currentColor;border-radius:50%;font-size:.65rem}
-.lua-form-group{margin-bottom:10px;padding:11px 13px;border:1px solid #d5e0eb;border-radius:11px;background:#f2f6fa;display:grid;gap:8px;min-width:0}
+.lua-form-group{margin-bottom:7px;padding:8px 10px;border:1px solid #d5e0eb;border-radius:11px;background:#f2f6fa;display:grid;gap:8px;min-width:0}
 .lua-form-group h3,.lua-choice legend{font:600 .82rem/1.35 var(--ui);color:#193e65;margin:0}
-.lua-field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.lua-field-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.lua-field-grid.lua-street-grid,.lua-field-grid.lua-postcode-grid{grid-template-columns:minmax(0,2fr) minmax(0,1fr)}
 .lua-choice{border:0;margin:0;padding:0;min-width:0}
 .lua-choice legend{padding:0;margin-bottom:7px}
 .lua-choice-grid{display:grid;grid-auto-columns:minmax(0,1fr);grid-auto-flow:column;gap:8px}
@@ -269,12 +269,12 @@ footer{background:#0e223a}footer>img{background:#10294a;width:120px;height:120px
 .lua-item-options{font:500 .79rem/1.4 var(--ui)}
 .lua-item-options summary{cursor:pointer}
 .lua-item-options[open] .ad-field{margin-top:8px!important}
-.lua-checkout-actions{display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end}
+.lua-checkout-actions{position:sticky;bottom:0;z-index:1;display:flex;flex-wrap:wrap;gap:8px;justify-content:flex-end;padding:8px 0;background:var(--ad-bg)}
 .lua-checkout-actions .btn{padding:8px 15px;min-height:44px;font-size:.71rem;letter-spacing:.03em;text-align:center}
 .lua-preserve-lines{white-space:pre-wrap}
 #co-error:empty{display:none}
-@media(max-width:600px){.lua-checkout-steps{margin-inline:20px}.lua-form-group{padding:10px}.lua-checkout-actions .btn{flex:1 1 auto}#checkout-dialog .ad-field :is(input,select,textarea){font-size:16px}}
-@media(max-width:360px){.lua-field-grid{grid-template-columns:1fr}.bag-actions .btn{font-size:.62rem}}
+@media(max-width:600px){.lua-checkout-steps{margin-inline:20px}.lua-form-group{padding:8px}.lua-checkout-actions .btn{flex:1 1 auto}#checkout-dialog .ad-field :is(input,select,textarea){font-size:16px}}
+@media(max-width:360px){.lua-checkout-actions .btn{padding-inline:8px;font-size:.66rem}.bag-actions .btn{font-size:.62rem}}
 </style>
 </head>
 <body>
@@ -519,45 +519,39 @@ function choices(title, name, values) {
 }
 function addressFields() {
   return `<section class="lua-form-group" aria-label="Endereço de entrega">
-    <h3>Dados de quem vai receber</h3>
-    <div class="lua-field-grid">${input('Nome do destinatário *','recipient','required minlength="2" maxlength="100" autocomplete="section-recipient name" placeholder="Nome completo"')}${input('Telefone do destinatário *','recipientPhone','required maxlength="20" autocomplete="section-recipient tel" placeholder="Com DDD"','tel')}</div>
     <h3>Endereço de entrega</h3>
-    ${input('Rua / Avenida *','street','required maxlength="200" autocomplete="address-line1" placeholder="Nome da rua ou avenida"')}
-    <div class="lua-field-grid">${input('Número *','number','required maxlength="30" placeholder="123 ou S/N"')}${input('Complemento','complement','maxlength="200" autocomplete="address-line2" placeholder="Apto, bloco…"')}</div>
-    <div class="lua-field-grid">${input('Bairro *','district','required maxlength="200" autocomplete="address-level3"')}${input('Cidade *','city','required maxlength="200" autocomplete="address-level2"')}</div>
-    ${input('Ponto de referência (opcional)','reference','maxlength="200" placeholder="Próximo a…"')}
-    <div class="lua-field-grid">${input('CEP *','cep','required autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}-?[0-9]{3}" placeholder="00000-000"')}${input('Estado (UF) *','uf','required minlength="2" maxlength="2" pattern="[A-Za-z]{2}" autocomplete="address-level1" placeholder="UF"')}</div>
+    <div class="lua-field-grid lua-street-grid">
+      ${input('Rua / Avenida *','street','required maxlength="200" autocomplete="address-line1"')}
+      ${input('Número *','number','required maxlength="30" placeholder="123 ou S/N"')}
+    </div>
+    <div class="lua-field-grid">
+      ${input('Bairro *','district','required maxlength="200" autocomplete="address-level3"')}
+      ${input('Cidade *','city','required maxlength="200" autocomplete="address-level2"')}
+    </div>
+    <div class="lua-field-grid lua-postcode-grid">
+      ${input('CEP *','cep','required autocomplete="postal-code" inputmode="numeric" pattern="[0-9]{5}-?[0-9]{3}" placeholder="00000-000"')}
+      ${input('Estado (UF) *','uf','required minlength="2" maxlength="2" pattern="[A-Za-z]{2}" autocomplete="address-level1" placeholder="UF"')}
+    </div>
   </section>`;
-}
-function scheduleLabel() {
-  const date = customer.deliveryDate?.split('-').reverse().join('/');
-  const period = {morning:'Manhã',afternoon:'Tarde'}[customer.period];
-  return [date,period].filter(Boolean).join(' · ');
 }
 function dataFields() {
   const delivery = customer.mode === 'delivery';
-  const receipt = delivery ? 'da entrega' : 'da retirada';
   return `<section class="lua-form-group">${choices('Como você quer receber?','mode',[['delivery','Entrega','Frete a consultar'],['pickup','Retirada','Sem taxa']])}</section>
     <section class="lua-form-group" aria-label="Seus dados"><h3>Seus dados</h3><div class="lua-field-grid">
       ${input('Nome *','name','required minlength="2" maxlength="100" autocomplete="name" placeholder="Seu nome"')}
       ${input('Telefone *','phone','required maxlength="20" autocomplete="tel" placeholder="Com DDD"','tel')}
     </div></section>
     ${delivery ? addressFields() : '<p class="lua-checkout-note">Combine o local e o horário de retirada pelo WhatsApp.</p>'}
-    <section class="lua-form-group" aria-label="Preferência de data e período">
-      <h3>Preferência ${receipt} (opcional)</h3>
-      <div class="lua-field-grid">${input('Data de preferência','deliveryDate','min="'+today()+'"','date')}
-        <label class="ad-field"><span>Período de preferência</span><select name="period"><option value="">A combinar</option><option value="morning" ${customer.period==='morning'?'selected':''}>Manhã</option><option value="afternoon" ${customer.period==='afternoon'?'selected':''}>Tarde</option></select></label>
-      </div><p class="lua-checkout-note">A equipe confirma a data e o horário no atendimento.</p>
-    </section>
     <section class="lua-form-group">${choices('Como pretende pagar?','payment',[['Pix','Pix'],['Cartão','Cartão'],['Dinheiro','Dinheiro']])}<p class="lua-checkout-note">O pagamento será confirmado pela equipe.</p></section>
-    <details class="lua-form-group lua-item-options" ${checkout.items.some(i=>options.get(i.id))?'open':''}><summary>Aro, tamanho ou preferência da peça (opcional)</summary>
-      ${checkout.items.map(i=>`<label class="ad-field"><span>${e(i.name)}</span><input name="option-${e(i.id)}" value="${e(options.get(i.id)||'')}" maxlength="120" placeholder="Ex.: aro 16"></label>`).join('')}
-    </details>
-    <section class="lua-form-group"><label class="ad-field"><span>Mensagem do cartão (opcional)</span><textarea name="note" rows="3" placeholder="Escreva sua mensagem para o cartão…">${e(customer.note || '')}</textarea></label></section>`;
-}
-function today() {
-  const now=new Date();
-  return `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')}`;
+    <details class="lua-form-group lua-item-options" ${customer.complement||customer.reference||customer.note||checkout.items.some(i=>options.get(i.id))?'open':''}>
+      <summary>Informações opcionais</summary>
+      ${delivery?`<div class="lua-field-grid">
+        ${input('Complemento','complement','maxlength="200" autocomplete="address-line2"')}
+        ${input('Ponto de referência','reference','maxlength="200"')}
+      </div>`:''}
+      ${checkout.items.map(i=>`<label class="ad-field"><span>Aro ou tamanho · ${e(i.name)}</span><input name="option-${e(i.id)}" value="${e(options.get(i.id)||'')}" maxlength="120" placeholder="Ex.: aro 16"></label>`).join('')}
+      <label class="ad-field"><span>Mensagem do cartão</span><textarea name="note" rows="2" placeholder="Escreva sua mensagem para o cartão…">${e(customer.note || '')}</textarea></label>
+    </details>`;
 }
 function addressText() {
   const c=customer;
@@ -569,7 +563,6 @@ function itemText(i) {
 }
 function message() {
   const c=customer, delivery=c.mode==='delivery';
-  const schedule=scheduleLabel();
   return whatsapp([
     'Olá, LUÁ Prata 925! Gostaria de fazer esta solicitação de compra:',
     '',
@@ -579,8 +572,7 @@ function message() {
     `Telefone: ${c.phone}`,
     '',
     delivery ? '*ENTREGA*' : '*RETIRADA*',
-    ...(delivery ? [`Destinatário: ${c.recipient}`,`Telefone de quem recebe: ${c.recipientPhone}`,`Endereço: ${addressText()}`]:['Local e horário a combinar.']),
-    ...(schedule ? [`Preferência: ${schedule}`] : []),
+    ...(delivery ? [`Endereço: ${addressText()}`]:['Local e horário a combinar.']),
     '',
     `Pagamento: ${c.payment}`,
     `Frete: ${delivery?'A consultar':'Sem taxa'}`,
@@ -593,7 +585,7 @@ function review() {
   return `<div class="co-review">
     <section><strong>Peças escolhidas</strong>${checkout.items.map(i=>`<div>${e(itemText(i))}</div>`).join('')}</section>
     <section><strong>Seus dados</strong>${e(c.name)} · ${e(c.phone)}</section>
-    <section><strong>${delivery?'Entrega':'Retirada'}</strong>${delivery?`<p>${e(c.recipient)} · ${e(c.recipientPhone)}</p><p class="lua-preserve-lines">${e(addressText())}</p>`:'Local e horário a combinar pelo WhatsApp.'}${scheduleLabel()?`<p>Preferência: ${e(scheduleLabel())}</p>`:''}</section>
+    <section><strong>${delivery?'Entrega':'Retirada'}</strong>${delivery?`<p class="lua-preserve-lines">${e(addressText())}</p>`:'Local e horário a combinar pelo WhatsApp.'}</section>
     <section><strong>Pagamento</strong>${e(c.payment)} · ${delivery?'Frete a consultar':'Retirada sem taxa'}</section>
     ${c.note?`<section><strong>Mensagem do cartão</strong><p class="lua-preserve-lines">${e(c.note)}</p></section>`:''}
   </div><p class="lua-checkout-note">A loja confirma os valores, a disponibilidade e o prazo pelo WhatsApp.</p>`;
@@ -636,10 +628,9 @@ co.addEventListener('submit',event=>{
   if(checkout.stage!=='data') return;
   collect(event.target);
   const validPhone=value=>/^\d{10,15}$/.test((value||'').replace(/\D/g,''));
-  const field=!validPhone(customer.phone)?'phone':customer.mode==='delivery'&&!validPhone(customer.recipientPhone)?'recipientPhone':null;
-  if(field){
+  if(!validPhone(customer.phone)){
     $('#co-error').textContent='Confira o telefone com DDD.';
-    event.target.elements[field].focus();
+    event.target.elements.phone.focus();
     return;
   }
   checkout.stage='review';

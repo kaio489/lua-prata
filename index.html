@@ -282,6 +282,17 @@ footer{background:#0e223a}footer>img{background:#10294a;width:120px;height:120px
 .ad-photo-paste{display:flex;align-items:center;flex-wrap:wrap;gap:8px;margin-bottom:9px}
 .ad-photo-paste small{color:var(--ad-muted);font-size:.72rem}
 @media(max-width:760px){.ad-product-actions .ad-btn{min-height:44px}}
+</style><style>
+.detail-gallery{display:flex;gap:7px;overflow:auto;padding:2px;margin:0 0 13px}
+.detail-gallery button{border:1px solid var(--line);background:var(--bg);border-radius:7px;padding:2px;flex:none}
+.detail-gallery button[aria-pressed=true]{border:2px solid var(--verde);padding:1px}
+.detail-gallery img{width:52px;height:60px;object-fit:cover;border-radius:4px}
+.ad-gallery-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(115px,1fr));gap:8px;margin:0 0 12px}
+.ad-gallery-list li{border:1px solid var(--ad-line);border-radius:9px;padding:6px;background:#fff;min-width:0}
+.ad-gallery-list img{width:100%;height:94px;object-fit:cover;border-radius:5px}
+.ad-gallery-list li>div{display:grid;gap:4px;margin-top:5px}
+.ad-gallery-list .ad-btn{width:100%;min-height:32px;padding:4px;font-size:.66rem}
+.ad-gallery-list .ad-tag{justify-self:start}
 </style></head>
 <body>
 <svg class="icon-defs" aria-hidden="true"><defs>
@@ -313,8 +324,123 @@ footer{background:#0e223a}footer>img{background:#10294a;width:120px;height:120px
 <footer id="contato"><div class="lua-footer-brand"><img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxMDAgMTAwIj48cGF0aCBmaWxsPSIjNTI3MjkyIiBkPSJNNjkgOWE0MyA0MyAwIDEgMCAyMiA2NkEzOSAzOSAwIDEgMSA2OSA5WiIvPjxwYXRoIGZpbGw9IiM1MjcyOTIiIGQ9Ik03NSAyM2MxLjYgMTAgMyAxMS40IDEzIDEzLTEwIDEuNi0xMS40IDMtMTMgMTMtMS42LTEwLTMtMTEuNC0xMy0xMyAxMC0xLjYgMTEuNC0zIDEzLTEzWiIvPjwvc3ZnPg==" alt="" width="42" height="42"><span class="lua-wordmark"><span>LUÁ</span><small>PRATA 925</small></span></div><p>Seu brilho em cada detalhe.<br>LUÁ Prata 925.</p><nav class="links" aria-label="Rodapé"><a href="#inicio">Início</a><a href="#catalogo">Catálogo</a><a href="#desejo">Joias para você</a><a href="#sobre">Nossa essência</a></nav><div class="actions" style="margin-top:0"><a class="btn" href="https://wa.me/5597991439724?text=Ol%C3%A1%2C%20LU%C3%81%20Prata%20925%21%20Vim%20pelo%20site%20e%20gostaria%20de%20conhecer%20as%20pe%C3%A7as." target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#wa"/></svg>Entrar em contato</a><a class="btn" href="https://www.instagram.com/lua_pratas_925_/" target="_blank" rel="noopener noreferrer"><svg class="ic"><use href="#instagram"/></svg>@lua_pratas_925_</a></div><div class="shipping-footer">Consulte as opções de envio<br><strong>Pix, cartão e dinheiro</strong></div><small><a href="tel:+5597991439724">(97) 99143-9724</a> · © LUÁ Prata 925</small></footer>
 <a class="floating-wa" href="https://wa.me/5597991439724?text=Ol%C3%A1%2C%20LU%C3%81%20Prata%20925%21%20Vim%20pelo%20site%20e%20gostaria%20de%20conhecer%20as%20pe%C3%A7as." target="_blank" rel="noopener noreferrer" aria-label="Fale com a LUÁ Prata 925 pelo WhatsApp"><svg class="wa-mark" viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.2C8.94 3.2 3.2 8.94 3.2 16c0 2.25.59 4.46 1.71 6.4L3.2 28.8l6.57-1.72A12.75 12.75 0 0 0 16 28.8c7.06 0 12.8-5.74 12.8-12.8S23.06 3.2 16 3.2Zm0 23.25a10.45 10.45 0 0 1-5.32-1.45l-.38-.22-3.9 1.02 1.04-3.8-.25-.39A10.47 10.47 0 0 1 5.55 16c0-5.76 4.69-10.45 10.45-10.45S26.45 10.24 26.45 16 21.76 26.45 16 26.45Zm5.75-8.24c-.31-.16-1.85-.91-2.14-1.01-.28-.11-.49-.16-.7.15-.21.32-.81 1.02-.99 1.23-.18.2-.36.23-.68.07-.31-.15-1.31-.48-2.51-1.55-.93-.83-1.55-1.85-1.73-2.16-.18-.32-.02-.49.13-.64.14-.14.32-.37.47-.55.16-.18.21-.31.31-.52.11-.21.06-.39-.02-.55-.08-.15-.7-1.69-.96-2.31-.26-.61-.51-.53-.71-.54-.18-.01-.39-.01-.6-.01-.2 0-.54.08-.83.39-.29.32-1.09 1.07-1.09 2.6 0 1.54 1.12 3.02 1.27 3.23.16.2 2.21 3.36 5.34 4.71.75.32 1.33.51 1.78.66.75.24 1.43.2 1.97.12.6-.09 1.85-.75 2.11-1.48.26-.73.26-1.36.18-1.49-.08-.13-.29-.21-.6-.36Z"/></svg><span class="wa-copy"><strong>Fale com a loja</strong><small>pelo WhatsApp</small></span><svg class="ic wa-arrow" aria-hidden="true"><use href="#arrow"/></svg></a><div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
 <dialog class="full" id="catalog-dialog" aria-labelledby="full-title"><div class="dh"><h2 id="full-title">Catálogo completo</h2><div class="dialog-tools"><button class="x" data-open-bag aria-label="Abrir carrinho"><svg class="ic"><use href="#bag"/></svg></button><button class="x" data-close="catalog-dialog" aria-label="Fechar catálogo"><svg class="ic"><use href="#close"/></svg></button></div></div><div class="full-toolbar"><label class="search-box"><svg class="ic"><use href="#search"/></svg><input id="search-input" type="search" placeholder="Buscar peça, cor ou estilo" aria-label="Buscar por nome, cor ou estilo" autocomplete="off"></label><button id="favorite-filter" aria-pressed="false"><svg class="ic"><use href="#heart"/></svg> Meus favoritos</button></div><div class="chips filters" role="group" aria-label="Filtrar catálogo"><button class="chip active" data-filter="Todos" aria-pressed="true">Todos</button><button class="chip" data-filter="Brincos" aria-pressed="false">Brincos</button><button class="chip" data-filter="Anéis" aria-pressed="false">Anéis</button><button class="chip" data-filter="Pulseiras" aria-pressed="false">Pulseiras</button><button class="chip" data-filter="Colares" aria-pressed="false">Colares</button></div><div class="results-line"><span id="result-count" aria-live="polite"></span><span class="demo-note">Valores e envio sob consulta</span></div><div class="grid" id="product-grid"></div><div id="empty-state" class="empty-state" hidden><h3>Nenhuma peça encontrada.</h3><p>Experimente outro nome, cor ou estilo.</p><button class="btn btn--solid" id="clear-filters">Ver toda a coleção</button></div></dialog>
-<dialog class="product-dialog" id="product-dialog" aria-labelledby="detail-title"><button class="dialog-close x" data-close="product-dialog" aria-label="Fechar detalhes"><svg class="ic"><use href="#close"/></svg></button><div class="detail-layout"><div class="detail-photo"><img id="detail-image" alt="" width="680" height="990"></div><div class="detail-copy"><p class="kicker" id="detail-category"></p><h2 id="detail-title"></h2><p id="detail-description"></p><div class="detail-meta"><span class="detail-price" id="detail-price"></span><p class="installments" id="detail-installments" hidden></p><p id="detail-availability"></p></div><button class="btn btn--solid" id="detail-add">Adicionar ao carrinho <svg class="ic"><use href="#bag"/></svg></button><button class="btn btn--solid" id="detail-buy">Montar pedido</button><a class="btn btn--line" id="detail-whatsapp" target="_blank" rel="noopener noreferrer">Consultar esta peça <svg class="ic"><use href="#wa"/></svg></a><p class="detail-footnote">Joias em prata 925</p></div></div></dialog>
+<dialog class="product-dialog" id="product-dialog" aria-labelledby="detail-title"><button class="dialog-close x" data-close="product-dialog" aria-label="Fechar detalhes"><svg class="ic"><use href="#close"/></svg></button><div class="detail-layout"><div class="detail-photo"><img id="detail-image" alt="" width="680" height="990"></div><div class="detail-copy"><div id="detail-gallery" class="detail-gallery" role="group" aria-label="Fotos da peça" hidden></div><p class="kicker" id="detail-category"></p><h2 id="detail-title"></h2><p id="detail-description"></p><div class="detail-meta"><span class="detail-price" id="detail-price"></span><p class="installments" id="detail-installments" hidden></p><p id="detail-availability"></p></div><button class="btn btn--solid" id="detail-add">Adicionar ao carrinho <svg class="ic"><use href="#bag"/></svg></button><button class="btn btn--solid" id="detail-buy">Montar pedido</button><a class="btn btn--line" id="detail-whatsapp" target="_blank" rel="noopener noreferrer">Consultar esta peça <svg class="ic"><use href="#wa"/></svg></a><p class="detail-footnote">Joias em prata 925</p></div></div></dialog>
 <dialog class="drawer bag-dialog" id="bag-dialog" aria-labelledby="selection-title"><div class="bag-heading dh"><div><p class="kicker">LUÁ Prata 925</p><h2 id="selection-title">Seu carrinho</h2></div><button class="x" data-close="bag-dialog" aria-label="Fechar carrinho"><svg class="ic"><use href="#close"/></svg></button></div><p class="bag-intro">Reúna suas peças favoritas e consulte a nossa equipe.</p><div class="bag-items" id="bag-items"></div><div class="bag-bottom"><div class="shipping-summary" id="selection-summary" hidden><div class="pricing-row"><span>Valores e envio</span><strong>Sob consulta</strong></div></div><div class="bag-actions"><button type="button" class="btn btn--line" data-close="bag-dialog">Continuar comprando</button><button type="button" id="send-selection" class="btn btn--solid">Finalizar compra</button></div><p>Preencha seus dados e confira o resumo.<br>A loja confirma disponibilidade, prazo e pagamento.</p></div></dialog>
+<script>
+// Extra photos travel in private WebP chunks so older catalog readers still display the cover.
+const productGallery = (() => {
+ const limit = 6;
+ const prefix = 'data:image/webp;base64,';
+ const typeList = ['image/jpeg','image/png','image/webp'];
+ const decode = value => Uint8Array.from(atob(value.slice(prefix.length)), char => char.charCodeAt(0));
+ function encode(bytes) {
+  let binary = '';
+  for (let offset=0;offset<bytes.length;offset+=8192) binary+=String.fromCharCode(...bytes.subarray(offset,offset+8192));
+  return prefix+btoa(binary);
+ }
+ function fourCC(bytes,offset){return String.fromCharCode(...bytes.subarray(offset,offset+4));}
+ function photos(image) {
+  if(!image)return [];
+  if(!image.startsWith(prefix))return [image];
+  try{
+   const bytes=decode(image),view=new DataView(bytes.buffer),extra=[];
+   if(fourCC(bytes,0)!=='RIFF'||fourCC(bytes,8)!=='WEBP')return [image];
+   let first=bytes.length;
+   for(let pos=12;pos+8<=bytes.length;){
+    const size=view.getUint32(pos+4,true),end=pos+8+size;
+    if(end>bytes.length)return [image];
+    if(fourCC(bytes,pos)==='JGAL'){
+     first=Math.min(first,pos);
+     const content=bytes.subarray(pos+8,end);
+     if(fourCC(content,0)==='RIFF'&&fourCC(content,8)==='WEBP'&&extra.length<limit-1)extra.push(encode(content));
+    }
+    pos=end+(size%2);
+   }
+   if(!extra.length)return [image];
+   const cover=bytes.slice(0,first);
+   new DataView(cover.buffer).setUint32(4,cover.length-8,true);
+   return [encode(cover),...extra];
+  }catch{return [image];}
+ }
+ function pack(cover,additional) {
+  if(!additional.length)return cover.url;
+  const base=decode(cover.url),extra=additional.map(photo=>decode(photo.url));
+  const extended=fourCC(base,12)==='VP8X'?0:18;
+  const bytes=new Uint8Array(base.length+extended+extra.reduce((sum,image)=>sum+8+image.length+(image.length%2),0));
+  const view=new DataView(bytes.buffer);
+  bytes.set(base.subarray(0,12));
+  if(extended){
+   bytes.set([86,80,56,88,10,0,0,0],12);
+   if(fourCC(base,12)==='VP8L'&&(base[24]&16))bytes[20]=16;
+   for(const [offset,size] of [[24,cover.width],[27,cover.height]]){
+    const value=size-1;
+    bytes.set([value&255,(value>>8)&255,(value>>16)&255],offset);
+   }
+  }
+  bytes.set(base.subarray(12),12+extended);
+  let offset=base.length+extended;
+  for(const image of extra){
+   bytes.set([74,71,65,76],offset);
+   view.setUint32(offset+4,image.length,true);
+   bytes.set(image,offset+8);
+   offset+=8+image.length+(image.length%2);
+  }
+  view.setUint32(4,bytes.length-8,true);
+  return encode(bytes);
+ }
+ async function resize(bitmap,max,quality){
+  const ratio=Math.min(1,max/Math.max(bitmap.width,bitmap.height));
+  const canvas=document.createElement('canvas');
+  canvas.width=Math.max(1,Math.round(bitmap.width*ratio));
+  canvas.height=Math.max(1,Math.round(bitmap.height*ratio));
+  canvas.getContext('2d').drawImage(bitmap,0,0,canvas.width,canvas.height);
+  const url=canvas.toDataURL('image/webp',quality);
+  if(!url.startsWith(prefix))throw Error('Este navegador não conseguiu preparar as fotos em WebP.');
+  return {url,width:canvas.width,height:canvas.height};
+ }
+ async function save(entries) {
+  const bitmaps=[];
+  try{
+   for(const entry of entries){
+    const source=entry.file||await (await fetch(entry.src)).blob();
+    bitmaps.push(await createImageBitmap(source));
+   }
+   for(const [max,quality] of [[1000,.82],[820,.72],[640,.64],[480,.58]]){
+    const [cover,...additional]=await Promise.all(bitmaps.map(bitmap=>resize(bitmap,max,quality)));
+    const image=pack(cover,additional);
+    if(image.length<=1350000)return image;
+   }
+   throw Error('As fotos são muito grandes. Remova uma imagem e tente novamente.');
+  }finally{bitmaps.forEach(bitmap=>bitmap.close());}
+ }
+ function show(product){
+  const list=photos(product.image), image=document.getElementById('detail-image');
+  const nav=document.getElementById('detail-gallery');
+  nav.hidden=list.length<2;
+  nav.replaceChildren();
+  image.src=list[0]||product.image;
+  image.alt=product.name;
+  if(list.length<2)return;
+  list.forEach((src,index)=>{
+   const button=document.createElement('button');
+   button.type='button';
+   button.setAttribute('aria-label','Mostrar foto '+(index+1)+' de '+list.length);
+   button.setAttribute('aria-pressed',String(index===0));
+   const thumb=document.createElement('img');
+   thumb.alt='';
+   thumb.src=src;
+   button.append(thumb);
+   button.addEventListener('click',()=>{
+    image.src=src;
+    image.alt=product.name+' · foto '+(index+1);
+    [...nav.children].forEach(item=>item.setAttribute('aria-pressed',String(item===button)));
+   });
+   nav.append(button);
+  });
+ }
+ return {limit,typeList,photos,save,show};
+})();
+</script>
 <script>'use strict';
 const PRODUCTS = [{"id": "brincos-ovais", "name": "Brincos Halo Oval", "category": "Brincos", "description": "Modelos com pedra central oval e contorno de pontos de luz. Consulte as cores disponíveis.", "color": "Cristal, azul e verde"}, {"id": "trios-de-brincos", "name": "Trios de Brincos", "category": "Brincos", "description": "Trios em tamanhos variados, com motivos de estrelas, flores e pedras coloridas.", "color": "Prata e azul"}, {"id": "pulseiras-luz", "name": "Pulseiras Cruz e Halo", "category": "Pulseiras", "description": "Duas propostas de pulseira delicada: uma com detalhe de cruz e outra com pedra oval em destaque.", "color": "Prateado"}, {"id": "aneis-cristal", "name": "Anéis Pontos de Luz", "category": "Anéis", "description": "Seleção de anéis com pedras transparentes e diferentes estilos de cravação. Consulte os aros disponíveis.", "color": "Cristal"}, {"id": "bracelete-azul", "name": "Bracelete Azul Celeste", "category": "Pulseiras", "description": "Bracelete com pedras em tons de azul, intercaladas por detalhes brilhantes.", "color": "Azul"}, {"id": "brincos-azul", "name": "Brincos Halo Azul", "category": "Brincos", "description": "Brincos com pedra central azul-escura e contorno de pedras claras.", "color": "Azul-escuro"}, {"id": "aneis-coracao", "name": "Anéis Coração Colorido", "category": "Anéis", "description": "Anéis com pedra em formato de coração e aro com pontos de luz. Consulte as cores e os aros.", "color": "Azul, vermelho, cristal, rosa e verde"}, {"id": "pulseira-margaridas", "name": "Pulseira Margaridas", "category": "Pulseiras", "description": "Pulseira de elos com margaridas brancas e miolo amarelo.", "color": "Branco e amarelo"}, {"id": "colar-borboleta", "name": "Colar Borboleta", "category": "Colares", "description": "Colar de corrente fina com pingente em contorno de borboleta.", "color": "Prateado"}, {"id": "colares-cristal", "name": "Colares Cristal", "category": "Colares", "description": "Dois modelos de colar com pingentes transparentes em formato de coração ou círculo.", "color": "Cristal"}];
 // Let the browser decode images asynchronously; the visible catalog is already in the HTML.
@@ -360,7 +486,7 @@ function showProduct(id) {
   const p = state.products.find(p => p.id === id); if (!p) return;
   state.current = p;
   $('#detail-title').textContent = p.name;
-  $('#detail-image').src = p.image; $('#detail-image').alt = p.name;
+  productGallery.show(p);
   $('#detail-category').textContent = `COLEÇÃO LUÁ · ${p.category.toUpperCase()}`;
   $('#detail-description').textContent = p.description;
   $('#detail-price').textContent = showPrice(p);
@@ -837,53 +963,83 @@ function applyChange(db,action,p){
  if(action==='order'){const old=db.orders.find(x=>x.id===p.id);if(old)return old;let total=0;const items=p.items.map(i=>{const product=db.products.find(x=>x.id===i.id);if(product.price==null)throw Error('Cadastre o preço de '+product.name+' em Produtos antes de registrar a venda.');total+=Math.round(product.price*100)*i.quantity;return{...i,name:product.name,price:Math.round(product.price*100),cost:product.cost};});const order={id:p.id,number:1008+db.orders.length,created_at:new Date().toISOString(),customer:p.customer,items,subtotal:total,shipping:0,total,status:'Pendente',paid:false,deducted:false,version:1,internal_note:''};db.orders.unshift(order);return order;}
  return{ok:true};
 }
-function editProduct(id){const p=D.data.products.find(p=>p.id===id),body=`${field('Nome da peça','name',p?.name||'','text','maxlength="180" required')}<div class="ad-two">${field('Preço de venda (R$)','price',p?.price??'','number','min="0.01" max="1000000" step="0.01" placeholder="Sob consulta"')}${field('Custo unitário (R$)','cost',((p?.cost||0)/100).toFixed(2),'number','min="0" step="0.01" required')}</div>${field('Categoria','category',p?.category||'Brincos','text','maxlength="80" required list="ad-categories"')}<datalist id="ad-categories">${[...new Set(D.data.products.map(p=>p.category))].map(c=>`<option value="${e(c)}">`).join('')}</datalist><label class="ad-field">Descrição (exibida apenas ao abrir a peça)<textarea name="description" rows="4" maxlength="10000" required>${e(p?.description||'')}</textarea></label>${field('Condições de parcelamento (opcional)','installments',p?.installments||'')}<label class="ad-field">Foto da peça<input type="file" name="photo" accept="image/jpeg,image/png,image/webp"><small>JPG, PNG ou WebP, até 15 MB.</small></label><div class="ad-photo-paste"><button type="button" class="ad-btn ad-btn--light" id="ad-paste-photo" aria-describedby="ad-paste-status">Colar foto</button><small id="ad-paste-status" role="status">Copie uma imagem e use Ctrl+V ou ⌘+V neste editor.</small></div><img class="ad-preview-image" id="ad-product-preview" ${p&&fullImage(p)?`src="${fullImage(p)}"`:'hidden'} alt="Prévia da foto da peça"><label class="ad-check"><input name="active" type="checkbox" ${p?.active!==false?'checked':''}> Exibir no catálogo</label><p class="ad-note">O estoque é alterado na aba Estoque para manter o histórico de entradas e saídas.</p>`;
- let photo=null;
- editor(p?'Editar peça':'Nova peça',body,async(values,form)=>{const data={name:values.name.trim(),price:values.price===""?null:Number(values.price),category:values.category.trim(),description:values.description,installments:values.installments,color:p?.color||''};if(photo)data.image=await compressImage(photo);else if(!p)throw Error('Escolha ou cole uma foto da peça.');await mutate('product',{id:p?.id||'peca-'+uid(),data,cost:Math.round(Number(values.cost)*100),active:form.elements.active.checked,version:p?.version});});
- bindProductPhoto(document.getElementById('ad-edit-form'),file=>{photo=file;});
+function editProduct(id){const p=D.data.products.find(p=>p.id===id),body=`${field('Nome da peça','name',p?.name||'','text','maxlength="180" required')}<div class="ad-two">${field('Preço de venda (R$)','price',p?.price??'','number','min="0.01" max="1000000" step="0.01" placeholder="Sob consulta"')}${field('Custo unitário (R$)','cost',((p?.cost||0)/100).toFixed(2),'number','min="0" step="0.01" required')}</div>${field('Categoria','category',p?.category||'Brincos','text','maxlength="80" required list="ad-categories"')}<datalist id="ad-categories">${[...new Set(D.data.products.map(p=>p.category))].map(c=>`<option value="${e(c)}">`).join('')}</datalist><label class="ad-field">Descrição (exibida apenas ao abrir a peça)<textarea name="description" rows="4" maxlength="10000" required>${e(p?.description||'')}</textarea></label>${field('Condições de parcelamento (opcional)','installments',p?.installments||'')}<label class="ad-field">Fotos da peça<input type="file" name="photo" accept="image/jpeg,image/png,image/webp" multiple><small>Até 6 fotos por peça em JPG, PNG ou WebP.</small></label><div class="ad-photo-paste"><button type="button" class="ad-btn ad-btn--light" id="ad-paste-photo" aria-describedby="ad-paste-status">Colar foto</button><small id="ad-paste-status" role="status">Use Ctrl+V ou ⌘+V para acrescentar fotos.</small></div><ul id="ad-gallery-list" class="ad-gallery-list" aria-label="Fotos selecionadas"></ul><label class="ad-check"><input name="active" type="checkbox" ${p?.active!==false?'checked':''}> Exibir no catálogo</label><p class="ad-note">O estoque é alterado na aba Estoque para manter o histórico de entradas e saídas.</p>`;
+ let gallery;
+ const productId=p?.id||'peca-'+uid();
+ editor(p?'Editar peça':'Nova peça',body,async(values,form)=>{const data={name:values.name.trim(),price:values.price===""?null:Number(values.price),category:values.category.trim(),description:values.description,installments:values.installments,color:p?.color||''};if(!p||gallery.changed)data.image=await gallery.image();else if(p.image?.startsWith('data:'))data.image=p.image;await mutate('product',{id:productId,data,cost:Math.round(Number(values.cost)*100),active:form.elements.active.checked,version:p?.version});});
+ gallery=bindProductGallery(document.getElementById('ad-edit-form'),p?.image||(p&&PRODUCTS.find(product=>product.id===p.id)?.image));
 }
-const photoTypes=['image/jpeg','image/png','image/webp'];
-function bindProductPhoto(form,setPhoto){
- const fileInput=form.elements.photo, button=form.querySelector('#ad-paste-photo');
- const status=form.querySelector('#ad-paste-status'), preview=form.querySelector('#ad-product-preview');
- let url,revision=0;
- function stage(file,pasted){
-  if(!file||!photoTypes.includes(file.type)||file.size>15000000){
-   status.textContent='Use uma imagem JPG, PNG ou WebP de até 15 MB.';
-   return;
-  }
-  revision++;
-  if(url)URL.revokeObjectURL(url);
-  url=URL.createObjectURL(file);
-  preview.src=url;
-  preview.hidden=false;
-  setPhoto(file);
-  if(pasted)fileInput.value='';
-  status.textContent=pasted?'Foto colada. Salve as alterações para aplicar.':'Foto selecionada. Salve as alterações para aplicar.';
+function bindProductGallery(form,initialImage){
+ const picker=form.elements.photo, paste=form.querySelector('#ad-paste-photo');
+ const status=form.querySelector('#ad-paste-status'), list=form.querySelector('#ad-gallery-list');
+ const dialog=form.closest('dialog');
+ const entries=productGallery.photos(initialImage).map(src=>({src}));
+ let changed=false,revision=0;
+ function render(){
+  list.innerHTML=entries.map(({src},index)=>`<li><img src="${e(src)}" alt="Prévia da foto ${index+1}"><div>${index===0?'<span class="ad-tag">Capa</span>':`<button type="button" class="ad-btn ad-btn--light" data-gallery-cover="${index}">Usar como capa</button>`}<button type="button" class="ad-btn ad-btn--danger" data-gallery-remove="${index}" aria-label="Remover foto ${index+1}">Remover</button></div></li>`).join('');
  }
- fileInput.addEventListener('change',()=>{if(fileInput.files[0])stage(fileInput.files[0],false);});
- form.addEventListener('paste',event=>{
-  const image=[...(event.clipboardData?.files||[])].find(file=>file.type.startsWith('image/'));
-  if(image){event.preventDefault();stage(image,true);}
+ function add(files){
+  const valid=files.filter(file=>productGallery.typeList.includes(file.type)&&file.size<=15000000);
+  const accepted=valid.slice(0,productGallery.limit-entries.length);
+  if(accepted.length){
+   entries.push(...accepted.map(file=>({file,src:URL.createObjectURL(file)})));
+   changed=true;
+   revision++;
+   render();
+  }
+  status.textContent=accepted.length<valid.length?'Limite de 6 fotos por peça.':valid.length<files.length?'Use fotos JPG, PNG ou WebP de até 15 MB cada.':entries.length+' de 6 fotos.';
+ }
+ picker.addEventListener('change',()=>{
+  if(picker.files.length)add([...picker.files]);
+  picker.value='';
  });
- button.addEventListener('click',async()=>{
-  const pending=revision;
+ form.addEventListener('paste',event=>{
+  const files=[...(event.clipboardData?.files||[])].filter(file=>file.type.startsWith('image/'));
+  if(files.length){event.preventDefault();add(files);}
+ });
+ paste.addEventListener('click',async()=>{
+  const current=revision;
   try{
    const items=await navigator.clipboard.read();
-   const item=items.find(entry=>entry.types.some(type=>photoTypes.includes(type)));
-   const type=item?.types.find(value=>photoTypes.includes(value));
-   const file=type?await item.getType(type):null;
-   if(form.isConnected&&revision===pending)stage(file,true);
+   const photos=[];
+   for(const item of items){
+    const type=item.types.find(value=>productGallery.typeList.includes(value));
+    if(type)photos.push(await item.getType(type));
+   }
+   if(!form.isConnected||!dialog.open||revision!==current)return;
+   if(photos.length)add(photos);
+   else status.textContent='Copie uma imagem antes de colar.';
   }catch{
-   if(form.isConnected&&revision===pending)status.textContent='Cole com Ctrl+V ou ⌘+V neste editor, ou selecione um arquivo.';
+   if(form.isConnected&&dialog.open&&revision===current)status.textContent='Cole com Ctrl+V ou ⌘+V neste editor, ou selecione os arquivos.';
   }
  });
- form.closest('dialog').addEventListener('close',()=>{
+ list.addEventListener('click',event=>{
+  const button=event.target.closest('button');
+  if(!button)return;
+  const remove=button.hasAttribute('data-gallery-remove');
+  const index=Number(remove?button.dataset.galleryRemove:button.dataset.galleryCover);
+  const [entry]=entries.splice(index,1);
+  if(remove){if(entry.file)URL.revokeObjectURL(entry.src);}
+  else entries.unshift(entry);
+  changed=true;
   revision++;
-  if(url)URL.revokeObjectURL(url);
+  render();
+  status.textContent=entries.length+' de 6 fotos.';
+ });
+ dialog.addEventListener('close',()=>{
+  revision++;
+  entries.forEach(entry=>{if(entry.file)URL.revokeObjectURL(entry.src);});
  },{once:true});
+ render();
+ return {
+  async image(){
+   if(!changed&&initialImage)return initialImage;
+   if(!entries.length)throw Error('Escolha ou cole pelo menos uma foto da peça.');
+   return productGallery.save(entries.slice());
+  },
+  get changed(){return changed;}
+ };
 }
-async function compressImage(file){if(!photoTypes.includes(file.type)||file.size>15000000)throw Error('Envie JPG, PNG ou WebP de até 15 MB.');const bitmap=await createImageBitmap(file),scale=Math.min(1,1000/Math.max(bitmap.width,bitmap.height)),canvas=document.createElement('canvas');canvas.width=Math.round(bitmap.width*scale);canvas.height=Math.round(bitmap.height*scale);canvas.getContext('2d').drawImage(bitmap,0,0,canvas.width,canvas.height);bitmap.close();const url=canvas.toDataURL('image/webp',.82);if(url.length>1500000)throw Error('Foto muito grande. Use uma imagem menor.');return url;}
 function editStock(id){const p=D.data.products.find(p=>p.id===id);editor('Movimentar estoque',`<p class="ad-sub">${e(p.name)}<br>Saldo atual: <b>${p.stock===null?'não informado':p.stock}</b></p>${field('Novo saldo total (unidades)','balance',p.stock??'','number','min="0" max="1000000" step="1" required')}${field('Motivo da entrada, saída ou ajuste','reason','','text','minlength="3" maxlength="300" placeholder="Ex.: entrada de 5 peças do fornecedor" required')}<p class="ad-note">Informe o saldo final após a movimentação. O sistema calcula a diferença e registra o histórico.</p>`,async values=>{await mutate('stock',{id:p.id,version:p.version,balance:Number(values.balance),reason:values.reason.trim()});});}
 function clientWhatsApp(phone){let n=phone.replace(/\D/g,'');if(n.length===10||n.length===11)n='55'+n;return'https://wa.me/'+n;}
 function editOrder(id){const o=D.data.orders.find(o=>o.id===id),c=o.customer;editor('Pedido #'+o.number,`<div class="ad-detail-grid"><div class="ad-detail-card"><strong>Cliente</strong>${e(c.name)}<br>${e(c.phone)}<br>${c.phone?`<a href="${clientWhatsApp(c.phone)}" target="_blank" rel="noopener">Conversar no WhatsApp ↗</a>`:''}</div><div class="ad-detail-card"><strong>${c.mode==='pickup'?'Retirada combinada':'Entrega'}</strong>${c.mode==='pickup'?'Local combinado com o atendimento.':`${e(c.recipient||c.name)} · ${e(c.recipientPhone||'')}<br>${e(c.street||'')}, ${e(c.number||'')} ${e(c.complement||'')}<br>${e(c.district||'')} · ${e(c.city||'')}/${e(c.uf||'')}<br>CEP ${e(c.cep||'')}<br>${e(c.reference||'')}`}</div></div><div class="ad-detail-items">${o.items.map(i=>`<p><span>${i.quantity}× ${e(i.name)}${i.option?'<br><small>'+e(i.option)+'</small>':''}</span><b>${m(i.price*i.quantity)}</b></p>`).join('')}</div><div class="co-summary"><div><span>Produtos</span><b>${m(o.subtotal)}</b></div><div><span>Frete</span><b>${m(o.shipping)}</b></div><div><span>Pagamento</span><b>${e(c.payment)}</b></div><div class="co-total"><span>Total</span><b>${m(o.total)}</b></div></div>${c.note?`<div class="ad-detail-card"><strong>Mensagem do cartão</strong><p style="white-space:pre-wrap">${e(c.note)}</p></div>`:''}${select('Etapa do pedido','status',statuses,o.status)}<label class="ad-check"><input name="paid" type="checkbox" ${o.paid?'checked':''}> Pagamento recebido</label><label class="ad-check"><input name="refunded" type="checkbox" ${o.refunded?'checked':''}> Pagamento estornado (apenas para cancelados)</label><label class="ad-field">Observações internas<textarea name="internal_note" maxlength="5000">${e(o.internal_note||'')}</textarea></label><p class="ad-note">Confirmar dá baixa no estoque. Cancelar devolve as peças. Em caso de cancelamento pago, marque o estorno após devolver o valor ao cliente. Não lance o mesmo estorno novamente como despesa.</p>`,async(v,f)=>{if(v.status==='Cancelado'&&o.status!=='Cancelado'&&!confirm('Cancelar o pedido e devolver as peças ao estoque?'))throw Error('Cancelamento não confirmado.');await mutate('order_update',{id:o.id,version:o.version,status:v.status,paid:f.elements.paid.checked,refunded:f.elements.refunded.checked,internal_note:v.internal_note});});}
